@@ -14,7 +14,7 @@ app.use(bodyparser.urlencoded({ extended: false }))
 app.use(cors())
 
 
-mongoose.connect(url,{dbName:"miniprj"})
+mongoose.connect(url,{dbName:"miniprj",poolSize: 10})
     .then(()=>{
         console.log("Connection Successful")
     },(errRes)=>{
